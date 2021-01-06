@@ -120,4 +120,10 @@ class DocumentViewController {
         <String, dynamic>{Parameters.pageNumber: pageNumber});
     return Rect.fromJson(jsonDecode(cropBoxString));
   }
+
+  Future<void> addVisualSign(markers, String name) async {
+    String cropBoxString = await _channel.invokeMethod(Functions.getPageCropBox,
+        <String, dynamic>{Parameters.pageNumber: pageNumber});
+    return Rect.fromJson(jsonDecode(cropBoxString));
+  }
 }
